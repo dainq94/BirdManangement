@@ -154,6 +154,7 @@
             // 
             // groupBox2
             // 
+            groupBox2.BackColor = Color.Silver;
             groupBox2.Controls.Add(pictureBox1);
             groupBox2.Controls.Add(txt_role);
             groupBox2.Controls.Add(txt_address);
@@ -330,13 +331,14 @@
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = Color.White;
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(cb_userstatus);
             groupBox1.Controls.Add(txt_searchuser);
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(3, 65);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(308, 288);
+            groupBox1.Size = new Size(324, 288);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Search";
@@ -366,7 +368,7 @@
             // 
             txt_searchuser.Location = new Point(6, 63);
             txt_searchuser.Name = "txt_searchuser";
-            txt_searchuser.Size = new Size(296, 27);
+            txt_searchuser.Size = new Size(312, 27);
             txt_searchuser.TabIndex = 1;
             txt_searchuser.TextChanged += textBox1_TextChanged;
             // 
@@ -456,18 +458,20 @@
             // 
             // dtg_product
             // 
+            dtg_product.AllowUserToAddRows = false;
             dtg_product.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtg_product.Location = new Point(16, 348);
+            dtg_product.Location = new Point(16, 382);
             dtg_product.Name = "dtg_product";
             dtg_product.RowHeadersWidth = 51;
             dtg_product.RowTemplate.Height = 29;
-            dtg_product.Size = new Size(936, 297);
+            dtg_product.Size = new Size(936, 263);
             dtg_product.TabIndex = 4;
             dtg_product.CellClick += dtg_product_CellClick;
             dtg_product.CellContentClick += dtg_product_CellContentClick;
             // 
             // gb_productname
             // 
+            gb_productname.BackColor = Color.FromArgb(255, 224, 192);
             gb_productname.Controls.Add(label16);
             gb_productname.Controls.Add(txt_productname);
             gb_productname.Controls.Add(label20);
@@ -487,7 +491,7 @@
             gb_productname.Controls.Add(pb_productimage);
             gb_productname.Location = new Point(344, 19);
             gb_productname.Name = "gb_productname";
-            gb_productname.Size = new Size(888, 323);
+            gb_productname.Size = new Size(888, 357);
             gb_productname.TabIndex = 3;
             gb_productname.TabStop = false;
             gb_productname.Text = "Product Name";
@@ -495,7 +499,7 @@
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(237, 196);
+            label16.Location = new Point(557, 158);
             label16.Name = "label16";
             label16.Size = new Size(51, 20);
             label16.TabIndex = 19;
@@ -503,15 +507,15 @@
             // 
             // txt_productname
             // 
-            txt_productname.Location = new Point(660, 20);
+            txt_productname.Location = new Point(630, 62);
             txt_productname.Name = "txt_productname";
-            txt_productname.Size = new Size(218, 27);
+            txt_productname.Size = new Size(247, 27);
             txt_productname.TabIndex = 18;
             // 
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(559, 27);
+            label20.Location = new Point(557, 65);
             label20.Name = "label20";
             label20.Size = new Size(49, 20);
             label20.TabIndex = 17;
@@ -520,15 +524,15 @@
             // cb_category
             // 
             cb_category.FormattingEnabled = true;
-            cb_category.Location = new Point(660, 68);
+            cb_category.Location = new Point(630, 111);
             cb_category.Name = "cb_category";
-            cb_category.Size = new Size(218, 28);
+            cb_category.Size = new Size(247, 28);
             cb_category.TabIndex = 16;
             // 
             // label19
             // 
             label19.AutoSize = true;
-            label19.Location = new Point(559, 69);
+            label19.Location = new Point(557, 115);
             label19.Name = "label19";
             label19.Size = new Size(69, 20);
             label19.TabIndex = 15;
@@ -536,24 +540,24 @@
             // 
             // txt_image
             // 
-            txt_image.Location = new Point(297, 196);
+            txt_image.Location = new Point(630, 155);
             txt_image.Multiline = true;
             txt_image.Name = "txt_image";
-            txt_image.Size = new Size(569, 104);
+            txt_image.Size = new Size(247, 97);
             txt_image.TabIndex = 14;
             // 
             // txt_id
             // 
             txt_id.Enabled = false;
-            txt_id.Location = new Point(308, 20);
+            txt_id.Location = new Point(443, 62);
             txt_id.Name = "txt_id";
-            txt_id.Size = new Size(210, 27);
+            txt_id.Size = new Size(82, 27);
             txt_id.TabIndex = 12;
             // 
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(240, 23);
+            label18.Location = new Point(372, 65);
             label18.Name = "label18";
             label18.Size = new Size(24, 20);
             label18.TabIndex = 11;
@@ -562,7 +566,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(559, 119);
+            label12.Location = new Point(311, 261);
             label12.Name = "label12";
             label12.Size = new Size(85, 20);
             label12.TabIndex = 8;
@@ -570,24 +574,24 @@
             // 
             // txt_description
             // 
-            txt_description.Location = new Point(660, 119);
+            txt_description.Location = new Point(405, 258);
             txt_description.Multiline = true;
             txt_description.Name = "txt_description";
-            txt_description.Size = new Size(218, 51);
+            txt_description.Size = new Size(472, 85);
             txt_description.TabIndex = 0;
             // 
             // txt_quantity
             // 
-            txt_quantity.Location = new Point(308, 116);
+            txt_quantity.Location = new Point(443, 158);
             txt_quantity.Name = "txt_quantity";
-            txt_quantity.Size = new Size(210, 27);
+            txt_quantity.Size = new Size(82, 27);
             txt_quantity.TabIndex = 7;
             // 
             // txt_price
             // 
-            txt_price.Location = new Point(308, 69);
+            txt_price.Location = new Point(443, 112);
             txt_price.Name = "txt_price";
-            txt_price.Size = new Size(210, 27);
+            txt_price.Size = new Size(82, 27);
             txt_price.TabIndex = 6;
             // 
             // label15
@@ -602,7 +606,7 @@
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.Location = new Point(237, 119);
+            label14.Location = new Point(372, 158);
             label14.Name = "label14";
             label14.Size = new Size(65, 20);
             label14.TabIndex = 3;
@@ -612,7 +616,7 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(237, 69);
+            label13.Location = new Point(372, 115);
             label13.Name = "label13";
             label13.Size = new Size(44, 20);
             label13.TabIndex = 2;
@@ -622,7 +626,7 @@
             // 
             lb_nameproduct.AutoSize = true;
             lb_nameproduct.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            lb_nameproduct.Location = new Point(18, 196);
+            lb_nameproduct.Location = new Point(358, 20);
             lb_nameproduct.Name = "lb_nameproduct";
             lb_nameproduct.Size = new Size(134, 25);
             lb_nameproduct.TabIndex = 1;
@@ -632,7 +636,7 @@
             // 
             pb_productimage.Location = new Point(18, 28);
             pb_productimage.Name = "pb_productimage";
-            pb_productimage.Size = new Size(185, 165);
+            pb_productimage.Size = new Size(316, 227);
             pb_productimage.SizeMode = PictureBoxSizeMode.StretchImage;
             pb_productimage.TabIndex = 0;
             pb_productimage.TabStop = false;
@@ -647,7 +651,7 @@
             groupBox3.Controls.Add(label11);
             groupBox3.Location = new Point(16, 19);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(322, 323);
+            groupBox3.Size = new Size(322, 357);
             groupBox3.TabIndex = 0;
             groupBox3.TabStop = false;
             groupBox3.Text = "Search";
@@ -656,7 +660,7 @@
             // 
             cb_categoryproduct.DropDownStyle = ComboBoxStyle.DropDownList;
             cb_categoryproduct.FormattingEnabled = true;
-            cb_categoryproduct.Items.AddRange(new object[] { "Select the category" });
+            cb_categoryproduct.Items.AddRange(new object[] { "Select the category", "Chim cảnh", "Chim giống", "Cám chim", "Hạt", "Cám tăng trưởng", "Máng nước", "Máng thức ăn", "Lồng chim cảnh", "Nhà chim bồ câu" });
             cb_categoryproduct.Location = new Point(10, 170);
             cb_categoryproduct.Name = "cb_categoryproduct";
             cb_categoryproduct.Size = new Size(228, 28);
@@ -688,6 +692,7 @@
             txt_searchproduct.Name = "txt_searchproduct";
             txt_searchproduct.Size = new Size(228, 27);
             txt_searchproduct.TabIndex = 1;
+            txt_searchproduct.TextChanged += txt_searchproduct_TextChanged;
             // 
             // label11
             // 

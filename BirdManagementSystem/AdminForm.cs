@@ -289,25 +289,26 @@ namespace Bird.APP
             list = LoadCustomerFilter(list);
 
             source.DataSource = list;
-            lb_nameuser.DataBindings.Clear();
-            txt_username.DataBindings.Clear();
-            txt_password.DataBindings.Clear();
-            txt_phone.DataBindings.Clear();
-            txt_email.DataBindings.Clear();
-            txt_yob.DataBindings.Clear();
-            txt_role.DataBindings.Clear();
-            txt_gender.DataBindings.Clear();
-            txt_address.DataBindings.Clear();
 
-            lb_nameuser.DataBindings.Add("Text", source, "Name");
-            txt_username.DataBindings.Add("Text", source, "Username");
-            txt_password.DataBindings.Add("Text", source, "Password");
-            txt_phone.DataBindings.Add("Text", source, "Phone");
-            txt_email.DataBindings.Add("Text", source, "Email");
-            txt_yob.DataBindings.Add("Text", source, "Yob");
-            txt_role.DataBindings.Add("Text", source, "Role");
-            txt_gender.DataBindings.Add("Text", source, "Gender");
-            txt_address.DataBindings.Add("Text", source, "Address");
+            //lb_nameuser.DataBindings.Clear();
+            //txt_username.DataBindings.Clear();
+            //txt_password.DataBindings.Clear();
+            //txt_phone.DataBindings.Clear();
+            //txt_email.DataBindings.Clear();
+            //txt_yob.DataBindings.Clear();
+            //txt_role.DataBindings.Clear();
+            //txt_gender.DataBindings.Clear();
+            //txt_address.DataBindings.Clear();
+
+            //lb_nameuser.DataBindings.Add("Text", source, "Name");
+            //txt_username.DataBindings.Add("Text", source, "Username");
+            //txt_password.DataBindings.Add("Text", source, "Password");
+            //txt_phone.DataBindings.Add("Text", source, "Phone");
+            //txt_email.DataBindings.Add("Text", source, "Email");
+            //txt_yob.DataBindings.Add("Text", source, "Yob");
+            //txt_role.DataBindings.Add("Text", source, "Role");
+            //txt_gender.DataBindings.Add("Text", source, "Gender");
+            //txt_address.DataBindings.Add("Text", source, "Address");
 
             dtg_user.DataSource = source;
             btn_block.Enabled = false;
@@ -514,12 +515,80 @@ namespace Bird.APP
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            LoadProductData();
         }
 
         private void pb_productimage_Click(object sender, EventArgs e)
         {
 
         }
+
+        private List<Product> LoadProductFilter(List<Product> list)
+        {
+            list = list.Where(u => u.Name.ToLower().Contains(txt_searchproduct.Text.ToLower())).ToList();
+            if (cb_categoryproduct.SelectedIndex == 1)
+            {
+                list = list.Where(p => p.CategoryId == 1).ToList();
+            }
+            else if (cb_categoryproduct.SelectedIndex == 2)
+            {
+                list = list.Where(p => p.CategoryId == 2).ToList();
+            }
+            else if (cb_categoryproduct.SelectedIndex == 3)
+            {
+                list = list.Where(p => p.CategoryId == 3).ToList();
+            }
+            else if (cb_categoryproduct.SelectedIndex == 4)
+            {
+                list = list.Where(p => p.CategoryId == 4).ToList();
+            }
+            else if (cb_categoryproduct.SelectedIndex == 5)
+            {
+                list = list.Where(p => p.CategoryId == 5).ToList();
+            }
+            else if (cb_categoryproduct.SelectedIndex == 6)
+            {
+                list = list.Where(p => p.CategoryId == 6).ToList();
+            }
+            else if (cb_categoryproduct.SelectedIndex == 7)
+            {
+                list = list.Where(p => p.CategoryId == 7).ToList();
+            }
+            else if (cb_categoryproduct.SelectedIndex == 8)
+            {
+                list = list.Where(p => p.CategoryId == 8).ToList();
+            }
+            else if (cb_categoryproduct.SelectedIndex == 9)
+            {
+                list = list.Where(p => p.CategoryId == 9).ToList();
+            }
+            return list;
+        }
+        private void LoadProductData()
+        {
+            source = new BindingSource();
+            List<Product> list = _productService.GetAllProducts(); ;
+            list = LoadProductFilter(list);
+
+            source.DataSource = list.Select(p => new
+            {
+                p.ProductId,
+                p.Name,
+                p.Quantity,
+                p.Description,
+                p.Price,
+                p.Category.CategoryName,
+                p.Status,
+                p.Image
+            });
+
+            dtg_product.DataSource = source;
+
+        }
+        private void txt_searchproduct_TextChanged(object sender, EventArgs e)
+        {
+            LoadProductData();
+        }
     }
 }
+

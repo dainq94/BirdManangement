@@ -41,6 +41,7 @@ namespace BirdDAO
         //    return user;
         //}
 
+        
         public void Update(User entity)
         {
             try
@@ -142,7 +143,7 @@ namespace BirdDAO
                 throw new Exception(ex.Message);
             }
             return entity;
-            //sdfsdfsdfsdf
+
         }
         public List<User> GetAllUsers()
         {
