@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\C#\\C#_WindowsForm\\Group_PRN\\BirdDAO\\BirdDAO.csproj": {}
+    "E:\\C#\\C#_WindowsForm\\Project_Bird\\BirdManangement\\BirdDAO\\BirdDAO.csproj": {}
   },
   "projects": {
-    "E:\\C#\\C#_WindowsForm\\Group_PRN\\BirdDAO\\BirdDAO.csproj": {
+    "E:\\C#\\C#_WindowsForm\\Project_Bird\\BirdManangement\\BirdDAO\\BirdDAO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\C#\\C#_WindowsForm\\Group_PRN\\BirdDAO\\BirdDAO.csproj",
+        "projectUniqueName": "E:\\C#\\C#_WindowsForm\\Project_Bird\\BirdManangement\\BirdDAO\\BirdDAO.csproj",
         "projectName": "BirdDAO",
-        "projectPath": "E:\\C#\\C#_WindowsForm\\Group_PRN\\BirdDAO\\BirdDAO.csproj",
+        "projectPath": "E:\\C#\\C#_WindowsForm\\Project_Bird\\BirdManangement\\BirdDAO\\BirdDAO.csproj",
         "packagesPath": "C:\\Users\\phamkhanh\\.nuget\\packages\\",
-        "outputPath": "E:\\C#\\C#_WindowsForm\\Group_PRN\\BirdDAO\\obj\\",
+        "outputPath": "E:\\C#\\C#_WindowsForm\\Project_Bird\\BirdManangement\\BirdDAO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\phamkhanh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\C#\\C#_WindowsForm\\Group_PRN\\BusinessObjects\\BusinessObjects.csproj": {
-                "projectPath": "E:\\C#\\C#_WindowsForm\\Group_PRN\\BusinessObjects\\BusinessObjects.csproj"
+              "E:\\C#\\C#_WindowsForm\\Project_Bird\\BirdManangement\\BusinessObjects\\BusinessObjects.csproj": {
+                "projectPath": "E:\\C#\\C#_WindowsForm\\Project_Bird\\BirdManangement\\BusinessObjects\\BusinessObjects.csproj"
               }
             }
           }
@@ -69,14 +69,14 @@
         }
       }
     },
-    "E:\\C#\\C#_WindowsForm\\Group_PRN\\BusinessObjects\\BusinessObjects.csproj": {
+    "E:\\C#\\C#_WindowsForm\\Project_Bird\\BirdManangement\\BusinessObjects\\BusinessObjects.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\C#\\C#_WindowsForm\\Group_PRN\\BusinessObjects\\BusinessObjects.csproj",
+        "projectUniqueName": "E:\\C#\\C#_WindowsForm\\Project_Bird\\BirdManangement\\BusinessObjects\\BusinessObjects.csproj",
         "projectName": "BusinessObjects",
-        "projectPath": "E:\\C#\\C#_WindowsForm\\Group_PRN\\BusinessObjects\\BusinessObjects.csproj",
+        "projectPath": "E:\\C#\\C#_WindowsForm\\Project_Bird\\BirdManangement\\BusinessObjects\\BusinessObjects.csproj",
         "packagesPath": "C:\\Users\\phamkhanh\\.nuget\\packages\\",
-        "outputPath": "E:\\C#\\C#_WindowsForm\\Group_PRN\\BusinessObjects\\obj\\",
+        "outputPath": "E:\\C#\\C#_WindowsForm\\Project_Bird\\BirdManangement\\BusinessObjects\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\phamkhanh\\AppData\\Roaming\\NuGet\\NuGet.Config",

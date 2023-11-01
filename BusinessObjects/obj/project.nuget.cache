@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JEzHRJTsaJpVqNfgTM3GYOsLtqIr1pjvOVVRBuqqYGhdZ00BZg7r7rMMh7fQkU1xxpEBaYTyhzutQ/9AKM4wvQ==",
+  "dgSpecHash": "9NxF9EvlM21wEWj2X3W/DFIXDGTB2o1YYb5VcDD2Tb65Cniubo4kcs+8a77zHnAJr9BrC4kYRdOP5sXXIsh/iQ==",
   "success": true,
-  "projectFilePath": "E:\\C#\\C#_WindowsForm\\Group_PRN\\BusinessObjects\\BusinessObjects.csproj",
+  "projectFilePath": "E:\\C#\\C#_WindowsForm\\Project_Bird\\BirdManangement\\BusinessObjects\\BusinessObjects.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\phamkhanh\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\phamkhanh\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

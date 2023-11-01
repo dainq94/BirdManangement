@@ -2946,11 +2946,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\C#\\C#_WindowsForm\\Group_PRN\\BirdManagementSystem\\Bird.APP.csproj",
+      "projectUniqueName": "E:\\C#\\C#_WindowsForm\\Project_Bird\\BirdManangement\\BirdManagementSystem\\Bird.APP.csproj",
       "projectName": "Bird.APP",
-      "projectPath": "E:\\C#\\C#_WindowsForm\\Group_PRN\\BirdManagementSystem\\Bird.APP.csproj",
+      "projectPath": "E:\\C#\\C#_WindowsForm\\Project_Bird\\BirdManangement\\BirdManagementSystem\\Bird.APP.csproj",
       "packagesPath": "C:\\Users\\phamkhanh\\.nuget\\packages\\",
-      "outputPath": "E:\\C#\\C#_WindowsForm\\Group_PRN\\BirdManagementSystem\\obj\\",
+      "outputPath": "E:\\C#\\C#_WindowsForm\\Project_Bird\\BirdManangement\\BirdManagementSystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\phamkhanh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2967,11 +2967,11 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "E:\\C#\\C#_WindowsForm\\Group_PRN\\BirdService\\BirdService.csproj": {
-              "projectPath": "E:\\C#\\C#_WindowsForm\\Group_PRN\\BirdService\\BirdService.csproj"
+            "E:\\C#\\C#_WindowsForm\\Project_Bird\\BirdManangement\\BirdService\\BirdService.csproj": {
+              "projectPath": "E:\\C#\\C#_WindowsForm\\Project_Bird\\BirdManangement\\BirdService\\BirdService.csproj"
             },
-            "E:\\C#\\C#_WindowsForm\\Group_PRN\\BusinessObjects\\BusinessObjects.csproj": {
-              "projectPath": "E:\\C#\\C#_WindowsForm\\Group_PRN\\BusinessObjects\\BusinessObjects.csproj"
+            "E:\\C#\\C#_WindowsForm\\Project_Bird\\BirdManangement\\BusinessObjects\\BusinessObjects.csproj": {
+              "projectPath": "E:\\C#\\C#_WindowsForm\\Project_Bird\\BirdManangement\\BusinessObjects\\BusinessObjects.csproj"
             }
           }
         }

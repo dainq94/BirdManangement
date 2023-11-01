@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4O4/jOkop6fITDBRwXhiKfqsgq/EuxSTEM8i7cEzw9itmpSXVAuYXNZ/n8EDtE4t6jkSox80YQSUmoKNmSEZZQ==",
+  "dgSpecHash": "s47Ye6m7RXawsUd/J8DufJ3X6a713G6RZjXmYscIzHpZjYtdSBk09WlcCpPyDBn2A0j60qlAns86OtzGhClHYw==",
   "success": true,
-  "projectFilePath": "E:\\C#\\C#_WindowsForm\\Group_PRN\\BirdRepository\\BirdRepository.csproj",
+  "projectFilePath": "E:\\C#\\C#_WindowsForm\\Project_Bird\\BirdManangement\\BirdRepository\\BirdRepository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\phamkhanh\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\phamkhanh\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

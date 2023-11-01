@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "y1X1DUUz5a9ZwRtPgFtOAWMqXjXKJC9x3vVXvjX2mP0cnUfY8NcMvwfxn+OnWfPulgSHR7OVcvrTCfpP8sOLBw==",
+  "dgSpecHash": "6/K7OFQ5uQ2PSxaGbDrf1t4PS1uBbI4/UJze5A9XmBHb7fAoYHAzSHov4HZzFhVLMIwJ/TfYv+tXDLuTs7jgSA==",
   "success": true,
-  "projectFilePath": "E:\\C#\\C#_WindowsForm\\Group_PRN\\BirdDAO\\BirdDAO.csproj",
+  "projectFilePath": "E:\\C#\\C#_WindowsForm\\Project_Bird\\BirdManangement\\BirdDAO\\BirdDAO.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\phamkhanh\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\phamkhanh\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
