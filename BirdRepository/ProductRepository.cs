@@ -19,5 +19,8 @@ namespace BirdRepository
 
         public void UpdateProduct(Product product)
         => ProductDAO.Instance.UpdateProduct(product);
+
+        public List<Product> getProductsByCategoryId(int categoryId)
+            => ProductDAO.Instance.getProductsByCategoryId(categoryId);
     }
 }

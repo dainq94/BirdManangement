@@ -9,5 +9,7 @@ namespace BirdService
         void UpdateProduct(Product product);
         void AddProduct(Product product);
         void DeleteProduct(int id);
+        List<Product> getProductsByCategoryId(int categoryId);
+
     }
 }
