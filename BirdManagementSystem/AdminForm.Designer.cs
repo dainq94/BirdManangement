@@ -660,7 +660,6 @@
             // 
             cb_categoryproduct.DropDownStyle = ComboBoxStyle.DropDownList;
             cb_categoryproduct.FormattingEnabled = true;
-            cb_categoryproduct.Items.AddRange(new object[] { "Select the category", "Chim cảnh", "Chim giống", "Cám chim", "Hạt", "Cám tăng trưởng", "Máng nước", "Máng thức ăn", "Lồng chim cảnh", "Nhà chim bồ câu" });
             cb_categoryproduct.Location = new Point(10, 170);
             cb_categoryproduct.Name = "cb_categoryproduct";
             cb_categoryproduct.Size = new Size(228, 28);

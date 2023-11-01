@@ -66,6 +66,16 @@ namespace Bird.APP
             cb_category.DataSource = _categoryService.GetCategories();
             cb_category.DisplayMember = "CategoryName";
             cb_category.ValueMember = "CategoryID";
+
+            List<Category> categories = _categoryService.GetCategories();
+            categories.Insert(0, new Category()
+            {
+                CategoryId = 0,
+                CategoryName = "Select the category"
+            });
+            cb_categoryproduct.DataSource = categories;
+            cb_categoryproduct.DisplayMember = "CategoryName";
+            cb_categoryproduct.ValueMember = "CategoryID";
         }
 
         private void dtg_user_CellClick(object sender, DataGridViewCellEventArgs e)
