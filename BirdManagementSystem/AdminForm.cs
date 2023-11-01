@@ -1,5 +1,9 @@
 ﻿using BirdService;
 using BusinessObjects.Models;
+using OxyPlot;
+using OxyPlot.Series;
+using OxyPlot.Axes;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +15,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Bird.APP
 {
     public partial class AdminForm : Form
@@ -19,6 +24,7 @@ namespace Bird.APP
         private readonly IUserService _userService;
         private readonly IProductService _productService;
         private readonly ICategoryService _categoryService;
+        private readonly IOrderService _orderService;
         private BindingSource bindingSource = null;
         public AdminForm()
         {
@@ -26,6 +32,7 @@ namespace Bird.APP
             _userService = new UserService();
             _productService = new ProductService();
             _categoryService = new CategoryService();
+            _orderService = new OrderService();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -35,7 +42,7 @@ namespace Bird.APP
 
         private void AdminForm_Load(object sender, EventArgs e)
         {
-            // load user
+            // -------------------- load user --------------------------
             dtg_user.DataSource = _userService.GetAllUsers().Select(c => new
             {
                 c.Username,
@@ -50,7 +57,7 @@ namespace Bird.APP
                 c.Role
             }).ToList();
 
-            // load product
+            // -------------------- load product ------------------------
             dtg_product.DataSource = _productService.GetAllProducts().Select(p => new
             {
                 p.ProductId,
@@ -66,6 +73,7 @@ namespace Bird.APP
             cb_category.DataSource = _categoryService.GetCategories();
             cb_category.DisplayMember = "CategoryName";
             cb_category.ValueMember = "CategoryID";
+            lb_totaluser.Text = $"Total records: {dtg_user.RowCount}";
 
             List<Category> categories = _categoryService.GetCategories();
             categories.Insert(0, new Category()
@@ -76,6 +84,46 @@ namespace Bird.APP
             cb_categoryproduct.DataSource = categories;
             cb_categoryproduct.DisplayMember = "CategoryName";
             cb_categoryproduct.ValueMember = "CategoryID";
+            lb_totalproduct.Text = $"Total records: {dtg_product.RowCount}";
+
+            // -------------------- load category ------------------------
+            dtg_category.DataSource = _categoryService.GetCategories().Select(c => new
+            {
+                c.CategoryId,
+                c.CategoryName
+            }).ToList();
+
+            // -------------------- load order ------------------------
+            dtg_order.DataSource = _orderService.GetOrders();
+            txt_allorder.Text = $"{dtg_order.RowCount}";
+            txt_ordersuccessful.Text = _orderService.GetOrdersWithStatus(new List<string> { "SUCCESSFUL" }).Count().ToString();
+            txt_ordered.Text = _orderService.GetOrdersWithStatus(new List<string> { "ORDERED" }).Count().ToString();
+            txt_ordercancel.Text = _orderService.GetOrdersWithStatus(new List<string> { "CANCELLED" }).Count().ToString();
+
+            // -------------------- load chart order ---------------------------------
+            var model = new PlotModel() { Title = "Thống kê" };
+
+            var series = new PieSeries();
+            int orderSuccess = _orderService.GetOrdersWithStatus(new List<string> { "SUCCESSFUL" }).Count();
+            if (orderSuccess != 0)
+            {
+                series.Slices.Add(new PieSlice("Success", orderSuccess) { Fill = OxyColors.Blue });
+            }
+            int ordered = _orderService.GetOrdersWithStatus(new List<string> { "ORDERED" }).Count();
+            if (ordered != 0)
+            {
+                series.Slices.Add(new PieSlice("Ordered", ordered) { Fill = OxyColors.Orange });
+            }
+            int ordercancelled = _orderService.GetOrdersWithStatus(new List<string> { "CANCELLED" }).Count();
+            if (ordercancelled != 0)
+            {
+                series.Slices.Add(new PieSlice("Cancelled", ordercancelled) { Fill = OxyColors.Red });
+            }
+            model.Series.Add(series);
+
+            pvChart.Model = model;
+
+
         }
 
         private void dtg_user_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -598,6 +646,94 @@ namespace Bird.APP
         private void txt_searchproduct_TextChanged(object sender, EventArgs e)
         {
             LoadProductData();
+        }
+
+        private void btn_closecategory_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btn_savecategory_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Category c = _categoryService.GetCategoryById(int.Parse(txt_categoryid.Text.Trim()));
+                if (c == null)
+                {
+                    Category category = new Category();
+                    category.CategoryId = int.Parse(txt_categoryid.Text.Trim());
+                    category.CategoryName = txt_categoryname.Text.Trim();
+
+                    _categoryService.AddCategory(category);
+                    MessageBox.Show("Add Successful!");
+                    // load lai trang
+                    dtg_category.DataSource = _categoryService.GetCategories().Select(c => new
+                    {
+                        c.CategoryId,
+                        c.CategoryName
+                    }).ToList();
+                }
+                else
+                {
+                    MessageBox.Show("CategoryID đã tồn tại!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Add Error!!!" + ex.Message);
+            }
+        }
+
+        private void tabPage4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtg_order_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dtg_category_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_categoryid.Text = dtg_category.CurrentRow.Cells[0].Value.ToString();
+            txt_categoryname.Text = dtg_category.CurrentRow.Cells[1].Value.ToString();
+        }
+
+        private void btn_clearcategory_Click(object sender, EventArgs e)
+        {
+            txt_categoryid.Clear();
+            txt_categoryname.Clear();
+        }
+
+        private void btn_editcategory_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_deletecategory_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(int.Parse(txt_categoryid.Text.Trim()) > 0)
+                {
+                    _categoryService.DeleteCategory(int.Parse(txt_categoryid.Text.Trim()));
+                    MessageBox.Show("Delete successful!");
+                    // load lai trang
+                    dtg_category.DataSource = _categoryService.GetCategories().Select(c => new
+                    {
+                        c.CategoryId,
+                        c.CategoryName
+                    }).ToList();
+                } else
+                {
+                    MessageBox.Show("CategoryID isn't empty");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

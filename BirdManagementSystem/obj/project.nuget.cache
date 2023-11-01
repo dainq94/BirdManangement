@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8uquz0I55/TUFGqKXcoZLvlp8NGxAIhfUrugD0zuR+T1LUXvhMr9Wv+vq44PPY9jTcNcD9JIkTOxjwC1rerlxA==",
+  "dgSpecHash": "AaRMUbYVexvlFZmPC9R84iyIluz4n4cAFd95LSPip5FpV8BveyT0YXtradjYJ45Tr1Zm/ogyYmnoU2NiW9tmhA==",
   "success": true,
   "projectFilePath": "E:\\C#\\C#_WindowsForm\\Project_Bird\\BirdManangement\\BirdManagementSystem\\Bird.APP.csproj",
   "expectedPackageFiles": [
@@ -42,6 +42,8 @@
     "C:\\Users\\phamkhanh\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\phamkhanh\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\phamkhanh\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\phamkhanh\\.nuget\\packages\\oxyplot.core\\2.1.2\\oxyplot.core.2.1.2.nupkg.sha512",
+    "C:\\Users\\phamkhanh\\.nuget\\packages\\oxyplot.windowsforms\\2.1.2\\oxyplot.windowsforms.2.1.2.nupkg.sha512",
     "C:\\Users\\phamkhanh\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\phamkhanh\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.1\\system.configuration.configurationmanager.6.0.1.nupkg.sha512",
     "C:\\Users\\phamkhanh\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",

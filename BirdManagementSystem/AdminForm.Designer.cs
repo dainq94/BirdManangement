@@ -30,6 +30,8 @@
         {
             tabcontrol1 = new TabControl();
             tab_manageaccounts = new TabPage();
+            lb_totaluser = new Label();
+            label17 = new Label();
             btn_closeuser = new Button();
             btn_block = new Button();
             groupBox2 = new GroupBox();
@@ -58,6 +60,8 @@
             label1 = new Label();
             dtg_user = new DataGridView();
             tab_manageproducts = new TabPage();
+            label21 = new Label();
+            lb_totalproduct = new Label();
             Btn_closeproduct = new Button();
             btn_deleteproduct = new Button();
             btn_addproduct = new Button();
@@ -84,11 +88,38 @@
             groupBox3 = new GroupBox();
             cb_categoryproduct = new ComboBox();
             label22 = new Label();
-            btn_searchproduct = new Button();
             txt_searchproduct = new TextBox();
             label11 = new Label();
             tabPage3 = new TabPage();
+            btn_clearcategory = new Button();
+            btn_deletecategory = new Button();
+            btn_closecategory = new Button();
+            label27 = new Label();
+            label26 = new Label();
+            btn_savecategory = new Button();
+            txt_categoryname = new TextBox();
+            txt_categoryid = new TextBox();
+            label25 = new Label();
+            label24 = new Label();
+            label23 = new Label();
+            dtg_category = new DataGridView();
             tabPage4 = new TabPage();
+            pvChart = new OxyPlot.WindowsForms.PlotView();
+            dtg_order = new DataGridView();
+            groupBox4 = new GroupBox();
+            label28 = new Label();
+            groupBox8 = new GroupBox();
+            txt_ordercancel = new TextBox();
+            label32 = new Label();
+            groupBox7 = new GroupBox();
+            txt_ordered = new TextBox();
+            label31 = new Label();
+            groupBox6 = new GroupBox();
+            txt_ordersuccessful = new TextBox();
+            label30 = new Label();
+            groupBox5 = new GroupBox();
+            txt_allorder = new TextBox();
+            label29 = new Label();
             tabcontrol1.SuspendLayout();
             tab_manageaccounts.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -100,6 +131,15 @@
             gb_productname.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pb_productimage).BeginInit();
             groupBox3.SuspendLayout();
+            tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dtg_category).BeginInit();
+            tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dtg_order).BeginInit();
+            groupBox4.SuspendLayout();
+            groupBox8.SuspendLayout();
+            groupBox7.SuspendLayout();
+            groupBox6.SuspendLayout();
+            groupBox5.SuspendLayout();
             SuspendLayout();
             // 
             // tabcontrol1
@@ -116,6 +156,8 @@
             // 
             // tab_manageaccounts
             // 
+            tab_manageaccounts.Controls.Add(lb_totaluser);
+            tab_manageaccounts.Controls.Add(label17);
             tab_manageaccounts.Controls.Add(btn_closeuser);
             tab_manageaccounts.Controls.Add(btn_block);
             tab_manageaccounts.Controls.Add(groupBox2);
@@ -130,11 +172,32 @@
             tab_manageaccounts.UseVisualStyleBackColor = true;
             tab_manageaccounts.Click += tab_manageaccounts_Click;
             // 
+            // lb_totaluser
+            // 
+            lb_totaluser.AutoSize = true;
+            lb_totaluser.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lb_totaluser.Location = new Point(3, 377);
+            lb_totaluser.Name = "lb_totaluser";
+            lb_totaluser.Size = new Size(135, 28);
+            lb_totaluser.TabIndex = 8;
+            lb_totaluser.Text = "Total records";
+            // 
+            // label17
+            // 
+            label17.BackColor = Color.Blue;
+            label17.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            label17.ForeColor = Color.Transparent;
+            label17.Location = new Point(-4, 0);
+            label17.Name = "label17";
+            label17.Size = new Size(1236, 40);
+            label17.TabIndex = 7;
+            label17.Text = "MANAGE ACCOUNTS";
+            // 
             // btn_closeuser
             // 
-            btn_closeuser.Location = new Point(1138, 356);
+            btn_closeuser.Location = new Point(1138, 368);
             btn_closeuser.Name = "btn_closeuser";
-            btn_closeuser.Size = new Size(83, 41);
+            btn_closeuser.Size = new Size(83, 29);
             btn_closeuser.TabIndex = 6;
             btn_closeuser.Text = "Close";
             btn_closeuser.UseVisualStyleBackColor = true;
@@ -144,7 +207,7 @@
             // 
             btn_block.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btn_block.ForeColor = Color.Red;
-            btn_block.Location = new Point(9, 362);
+            btn_block.Location = new Point(1001, 368);
             btn_block.Name = "btn_block";
             btn_block.Size = new Size(121, 29);
             btn_block.TabIndex = 5;
@@ -178,7 +241,7 @@
             groupBox2.Size = new Size(900, 288);
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
-            groupBox2.Text = "Information";
+            groupBox2.Text = "Thông tin cá nhân";
             // 
             // pictureBox1
             // 
@@ -396,6 +459,8 @@
             // 
             // tab_manageproducts
             // 
+            tab_manageproducts.Controls.Add(label21);
+            tab_manageproducts.Controls.Add(lb_totalproduct);
             tab_manageproducts.Controls.Add(Btn_closeproduct);
             tab_manageproducts.Controls.Add(btn_deleteproduct);
             tab_manageproducts.Controls.Add(btn_addproduct);
@@ -412,10 +477,31 @@
             tab_manageproducts.UseVisualStyleBackColor = true;
             tab_manageproducts.Click += tabPage2_Click;
             // 
+            // label21
+            // 
+            label21.BackColor = Color.Blue;
+            label21.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            label21.ForeColor = Color.Transparent;
+            label21.Location = new Point(3, 0);
+            label21.Name = "label21";
+            label21.Size = new Size(1233, 35);
+            label21.TabIndex = 9;
+            label21.Text = "MANAGE PRODUCTS";
+            // 
+            // lb_totalproduct
+            // 
+            lb_totalproduct.AutoSize = true;
+            lb_totalproduct.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lb_totalproduct.Location = new Point(16, 348);
+            lb_totalproduct.Name = "lb_totalproduct";
+            lb_totalproduct.Size = new Size(135, 28);
+            lb_totalproduct.TabIndex = 8;
+            lb_totalproduct.Text = "Total records";
+            // 
             // Btn_closeproduct
             // 
             Btn_closeproduct.BackColor = Color.FromArgb(255, 128, 128);
-            Btn_closeproduct.Location = new Point(1056, 603);
+            Btn_closeproduct.Location = new Point(1102, 594);
             Btn_closeproduct.Name = "Btn_closeproduct";
             Btn_closeproduct.Size = new Size(124, 51);
             Btn_closeproduct.TabIndex = 7;
@@ -426,7 +512,7 @@
             // btn_deleteproduct
             // 
             btn_deleteproduct.BackColor = Color.FromArgb(255, 128, 128);
-            btn_deleteproduct.Location = new Point(1056, 529);
+            btn_deleteproduct.Location = new Point(1102, 528);
             btn_deleteproduct.Name = "btn_deleteproduct";
             btn_deleteproduct.Size = new Size(124, 51);
             btn_deleteproduct.TabIndex = 7;
@@ -437,7 +523,7 @@
             // btn_addproduct
             // 
             btn_addproduct.BackColor = Color.FromArgb(255, 128, 128);
-            btn_addproduct.Location = new Point(1057, 455);
+            btn_addproduct.Location = new Point(1103, 452);
             btn_addproduct.Name = "btn_addproduct";
             btn_addproduct.Size = new Size(123, 51);
             btn_addproduct.TabIndex = 6;
@@ -448,7 +534,7 @@
             // btn_editproduct
             // 
             btn_editproduct.BackColor = Color.FromArgb(255, 128, 128);
-            btn_editproduct.Location = new Point(1056, 382);
+            btn_editproduct.Location = new Point(1102, 382);
             btn_editproduct.Name = "btn_editproduct";
             btn_editproduct.Size = new Size(124, 52);
             btn_editproduct.TabIndex = 5;
@@ -464,7 +550,7 @@
             dtg_product.Name = "dtg_product";
             dtg_product.RowHeadersWidth = 51;
             dtg_product.RowTemplate.Height = 29;
-            dtg_product.Size = new Size(936, 263);
+            dtg_product.Size = new Size(1080, 263);
             dtg_product.TabIndex = 4;
             dtg_product.CellClick += dtg_product_CellClick;
             dtg_product.CellContentClick += dtg_product_CellContentClick;
@@ -489,12 +575,12 @@
             gb_productname.Controls.Add(label13);
             gb_productname.Controls.Add(lb_nameproduct);
             gb_productname.Controls.Add(pb_productimage);
-            gb_productname.Location = new Point(344, 19);
+            gb_productname.Location = new Point(344, 47);
             gb_productname.Name = "gb_productname";
-            gb_productname.Size = new Size(888, 357);
+            gb_productname.Size = new Size(888, 329);
             gb_productname.TabIndex = 3;
             gb_productname.TabStop = false;
-            gb_productname.Text = "Product Name";
+            gb_productname.Text = "Thông tin sản phẩm";
             // 
             // label16
             // 
@@ -566,7 +652,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(311, 261);
+            label12.Location = new Point(372, 232);
             label12.Name = "label12";
             label12.Size = new Size(85, 20);
             label12.TabIndex = 8;
@@ -574,10 +660,10 @@
             // 
             // txt_description
             // 
-            txt_description.Location = new Point(405, 258);
+            txt_description.Location = new Point(372, 258);
             txt_description.Multiline = true;
             txt_description.Name = "txt_description";
-            txt_description.Size = new Size(472, 85);
+            txt_description.Size = new Size(505, 65);
             txt_description.TabIndex = 0;
             // 
             // txt_quantity
@@ -625,10 +711,10 @@
             // lb_nameproduct
             // 
             lb_nameproduct.AutoSize = true;
-            lb_nameproduct.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            lb_nameproduct.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lb_nameproduct.Location = new Point(358, 20);
             lb_nameproduct.Name = "lb_nameproduct";
-            lb_nameproduct.Size = new Size(134, 25);
+            lb_nameproduct.Size = new Size(148, 28);
             lb_nameproduct.TabIndex = 1;
             lb_nameproduct.Text = "Product Name";
             // 
@@ -644,81 +730,367 @@
             // 
             // groupBox3
             // 
+            groupBox3.BackColor = Color.FromArgb(255, 255, 192);
             groupBox3.Controls.Add(cb_categoryproduct);
             groupBox3.Controls.Add(label22);
-            groupBox3.Controls.Add(btn_searchproduct);
             groupBox3.Controls.Add(txt_searchproduct);
             groupBox3.Controls.Add(label11);
-            groupBox3.Location = new Point(16, 19);
+            groupBox3.Location = new Point(16, 47);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(322, 357);
+            groupBox3.Size = new Size(322, 298);
             groupBox3.TabIndex = 0;
             groupBox3.TabStop = false;
-            groupBox3.Text = "Search";
             // 
             // cb_categoryproduct
             // 
             cb_categoryproduct.DropDownStyle = ComboBoxStyle.DropDownList;
             cb_categoryproduct.FormattingEnabled = true;
-            cb_categoryproduct.Location = new Point(10, 170);
+            cb_categoryproduct.Location = new Point(6, 154);
             cb_categoryproduct.Name = "cb_categoryproduct";
-            cb_categoryproduct.Size = new Size(228, 28);
+            cb_categoryproduct.Size = new Size(296, 28);
             cb_categoryproduct.TabIndex = 4;
             cb_categoryproduct.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label22
             // 
             label22.AutoSize = true;
+            label22.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label22.Location = new Point(10, 131);
             label22.Name = "label22";
-            label22.Size = new Size(69, 20);
+            label22.Size = new Size(145, 20);
             label22.TabIndex = 3;
-            label22.Text = "Category";
-            // 
-            // btn_searchproduct
-            // 
-            btn_searchproduct.Location = new Point(244, 62);
-            btn_searchproduct.Name = "btn_searchproduct";
-            btn_searchproduct.Size = new Size(72, 27);
-            btn_searchproduct.TabIndex = 2;
-            btn_searchproduct.Text = "Search";
-            btn_searchproduct.UseVisualStyleBackColor = true;
-            btn_searchproduct.Click += btn_searchproduct_Click;
+            label22.Text = "Theo loại sản phẩm";
             // 
             // txt_searchproduct
             // 
             txt_searchproduct.Location = new Point(10, 62);
             txt_searchproduct.Name = "txt_searchproduct";
-            txt_searchproduct.Size = new Size(228, 27);
+            txt_searchproduct.Size = new Size(292, 27);
             txt_searchproduct.TabIndex = 1;
             txt_searchproduct.TextChanged += txt_searchproduct_TextChanged;
             // 
             // label11
             // 
             label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label11.Location = new Point(10, 32);
             label11.Name = "label11";
-            label11.Size = new Size(104, 20);
+            label11.Size = new Size(110, 20);
             label11.TabIndex = 0;
-            label11.Text = "Product Name";
+            label11.Text = "Tên sản phẩm:";
             // 
             // tabPage3
             // 
+            tabPage3.BackColor = Color.FromArgb(255, 224, 192);
+            tabPage3.Controls.Add(btn_clearcategory);
+            tabPage3.Controls.Add(btn_deletecategory);
+            tabPage3.Controls.Add(btn_closecategory);
+            tabPage3.Controls.Add(label27);
+            tabPage3.Controls.Add(label26);
+            tabPage3.Controls.Add(btn_savecategory);
+            tabPage3.Controls.Add(txt_categoryname);
+            tabPage3.Controls.Add(txt_categoryid);
+            tabPage3.Controls.Add(label25);
+            tabPage3.Controls.Add(label24);
+            tabPage3.Controls.Add(label23);
+            tabPage3.Controls.Add(dtg_category);
+            tabPage3.ForeColor = Color.Black;
             tabPage3.Location = new Point(4, 29);
             tabPage3.Name = "tabPage3";
             tabPage3.Size = new Size(1232, 660);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Manage Categories";
-            tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btn_clearcategory
+            // 
+            btn_clearcategory.Location = new Point(501, 380);
+            btn_clearcategory.Name = "btn_clearcategory";
+            btn_clearcategory.Size = new Size(113, 43);
+            btn_clearcategory.TabIndex = 12;
+            btn_clearcategory.Text = "Clear";
+            btn_clearcategory.UseVisualStyleBackColor = true;
+            btn_clearcategory.Click += btn_clearcategory_Click;
+            // 
+            // btn_deletecategory
+            // 
+            btn_deletecategory.Location = new Point(891, 380);
+            btn_deletecategory.Name = "btn_deletecategory";
+            btn_deletecategory.Size = new Size(113, 43);
+            btn_deletecategory.TabIndex = 11;
+            btn_deletecategory.Text = "Detele";
+            btn_deletecategory.UseVisualStyleBackColor = true;
+            btn_deletecategory.Click += btn_deletecategory_Click;
+            // 
+            // btn_closecategory
+            // 
+            btn_closecategory.Location = new Point(1081, 614);
+            btn_closecategory.Name = "btn_closecategory";
+            btn_closecategory.Size = new Size(140, 36);
+            btn_closecategory.TabIndex = 9;
+            btn_closecategory.Text = "Close";
+            btn_closecategory.UseVisualStyleBackColor = true;
+            btn_closecategory.Click += btn_closecategory_Click;
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            label27.Location = new Point(65, 94);
+            label27.Name = "label27";
+            label27.Size = new Size(182, 46);
+            label27.TabIndex = 8;
+            label27.Text = "Danh sách";
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            label26.Location = new Point(593, 94);
+            label26.Name = "label26";
+            label26.Size = new Size(329, 46);
+            label26.TabIndex = 7;
+            label26.Text = "Thêm category mới";
+            // 
+            // btn_savecategory
+            // 
+            btn_savecategory.Location = new Point(695, 380);
+            btn_savecategory.Name = "btn_savecategory";
+            btn_savecategory.Size = new Size(113, 43);
+            btn_savecategory.TabIndex = 6;
+            btn_savecategory.Text = "Save";
+            btn_savecategory.UseVisualStyleBackColor = true;
+            btn_savecategory.Click += btn_savecategory_Click;
+            // 
+            // txt_categoryname
+            // 
+            txt_categoryname.Location = new Point(647, 278);
+            txt_categoryname.Name = "txt_categoryname";
+            txt_categoryname.Size = new Size(340, 27);
+            txt_categoryname.TabIndex = 5;
+            // 
+            // txt_categoryid
+            // 
+            txt_categoryid.Location = new Point(641, 169);
+            txt_categoryid.Name = "txt_categoryid";
+            txt_categoryid.Size = new Size(346, 27);
+            txt_categoryid.TabIndex = 4;
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label25.Location = new Point(481, 274);
+            label25.Name = "label25";
+            label25.Size = new Size(154, 28);
+            label25.TabIndex = 3;
+            label25.Text = "CategoryName";
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label24.Location = new Point(481, 165);
+            label24.Name = "label24";
+            label24.Size = new Size(119, 28);
+            label24.TabIndex = 2;
+            label24.Text = "CategoryID";
+            // 
+            // label23
+            // 
+            label23.BackColor = Color.Blue;
+            label23.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            label23.ForeColor = Color.White;
+            label23.Location = new Point(0, 0);
+            label23.Name = "label23";
+            label23.Size = new Size(1232, 46);
+            label23.TabIndex = 1;
+            label23.Text = "MANAGE CATEGORIES";
+            // 
+            // dtg_category
+            // 
+            dtg_category.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtg_category.Location = new Point(3, 191);
+            dtg_category.Name = "dtg_category";
+            dtg_category.RowHeadersWidth = 51;
+            dtg_category.RowTemplate.Height = 29;
+            dtg_category.Size = new Size(305, 469);
+            dtg_category.TabIndex = 0;
+            dtg_category.CellClick += dtg_category_CellClick;
             // 
             // tabPage4
             // 
+            tabPage4.Controls.Add(pvChart);
+            tabPage4.Controls.Add(dtg_order);
+            tabPage4.Controls.Add(groupBox4);
             tabPage4.Location = new Point(4, 29);
             tabPage4.Name = "tabPage4";
             tabPage4.Size = new Size(1232, 660);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Manage Orders";
             tabPage4.UseVisualStyleBackColor = true;
+            tabPage4.Click += tabPage4_Click;
+            // 
+            // pvChart
+            // 
+            pvChart.Location = new Point(498, 15);
+            pvChart.Name = "pvChart";
+            pvChart.PanCursor = Cursors.Hand;
+            pvChart.Size = new Size(479, 409);
+            pvChart.TabIndex = 2;
+            pvChart.ZoomHorizontalCursor = Cursors.SizeWE;
+            pvChart.ZoomRectangleCursor = Cursors.SizeNWSE;
+            pvChart.ZoomVerticalCursor = Cursors.SizeNS;
+            pvChart.Click += tabPage4_Click;
+            // 
+            // dtg_order
+            // 
+            dtg_order.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtg_order.Location = new Point(259, 443);
+            dtg_order.Name = "dtg_order";
+            dtg_order.RowHeadersWidth = 51;
+            dtg_order.RowTemplate.Height = 29;
+            dtg_order.Size = new Size(973, 207);
+            dtg_order.TabIndex = 1;
+            dtg_order.CellClick += dtg_order_CellClick;
+            // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(label28);
+            groupBox4.Controls.Add(groupBox8);
+            groupBox4.Controls.Add(groupBox7);
+            groupBox4.Controls.Add(groupBox6);
+            groupBox4.Controls.Add(groupBox5);
+            groupBox4.Location = new Point(6, 134);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(247, 516);
+            groupBox4.TabIndex = 0;
+            groupBox4.TabStop = false;
+            // 
+            // label28
+            // 
+            label28.BackColor = Color.FromArgb(128, 128, 255);
+            label28.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            label28.Location = new Point(0, 12);
+            label28.Name = "label28";
+            label28.Size = new Size(245, 38);
+            label28.TabIndex = 1;
+            label28.Text = "ALL OF ORDER";
+            label28.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // groupBox8
+            // 
+            groupBox8.Controls.Add(txt_ordercancel);
+            groupBox8.Controls.Add(label32);
+            groupBox8.Location = new Point(18, 423);
+            groupBox8.Name = "groupBox8";
+            groupBox8.Size = new Size(219, 70);
+            groupBox8.TabIndex = 0;
+            groupBox8.TabStop = false;
+            // 
+            // txt_ordercancel
+            // 
+            txt_ordercancel.Enabled = false;
+            txt_ordercancel.Location = new Point(127, 20);
+            txt_ordercancel.Name = "txt_ordercancel";
+            txt_ordercancel.Size = new Size(65, 27);
+            txt_ordercancel.TabIndex = 1;
+            // 
+            // label32
+            // 
+            label32.AutoSize = true;
+            label32.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label32.ForeColor = Color.Red;
+            label32.Location = new Point(17, 20);
+            label32.Name = "label32";
+            label32.Size = new Size(75, 20);
+            label32.TabIndex = 0;
+            label32.Text = "Cancelled";
+            // 
+            // groupBox7
+            // 
+            groupBox7.Controls.Add(txt_ordered);
+            groupBox7.Controls.Add(label31);
+            groupBox7.Location = new Point(18, 330);
+            groupBox7.Name = "groupBox7";
+            groupBox7.Size = new Size(219, 70);
+            groupBox7.TabIndex = 0;
+            groupBox7.TabStop = false;
+            // 
+            // txt_ordered
+            // 
+            txt_ordered.Enabled = false;
+            txt_ordered.Location = new Point(127, 20);
+            txt_ordered.Name = "txt_ordered";
+            txt_ordered.Size = new Size(65, 27);
+            txt_ordered.TabIndex = 1;
+            // 
+            // label31
+            // 
+            label31.AutoSize = true;
+            label31.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label31.ForeColor = Color.FromArgb(255, 128, 0);
+            label31.Location = new Point(17, 23);
+            label31.Name = "label31";
+            label31.Size = new Size(66, 20);
+            label31.TabIndex = 0;
+            label31.Text = "Ordered";
+            // 
+            // groupBox6
+            // 
+            groupBox6.Controls.Add(txt_ordersuccessful);
+            groupBox6.Controls.Add(label30);
+            groupBox6.Location = new Point(18, 236);
+            groupBox6.Name = "groupBox6";
+            groupBox6.Size = new Size(219, 71);
+            groupBox6.TabIndex = 0;
+            groupBox6.TabStop = false;
+            // 
+            // txt_ordersuccessful
+            // 
+            txt_ordersuccessful.Enabled = false;
+            txt_ordersuccessful.Location = new Point(127, 20);
+            txt_ordersuccessful.Name = "txt_ordersuccessful";
+            txt_ordersuccessful.Size = new Size(65, 27);
+            txt_ordersuccessful.TabIndex = 1;
+            // 
+            // label30
+            // 
+            label30.AutoSize = true;
+            label30.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label30.ForeColor = Color.Blue;
+            label30.Location = new Point(17, 23);
+            label30.Name = "label30";
+            label30.Size = new Size(81, 20);
+            label30.TabIndex = 0;
+            label30.Text = "Successful";
+            // 
+            // groupBox5
+            // 
+            groupBox5.Controls.Add(txt_allorder);
+            groupBox5.Controls.Add(label29);
+            groupBox5.Location = new Point(18, 127);
+            groupBox5.Name = "groupBox5";
+            groupBox5.Size = new Size(219, 75);
+            groupBox5.TabIndex = 0;
+            groupBox5.TabStop = false;
+            // 
+            // txt_allorder
+            // 
+            txt_allorder.Enabled = false;
+            txt_allorder.Location = new Point(127, 34);
+            txt_allorder.Name = "txt_allorder";
+            txt_allorder.Size = new Size(65, 27);
+            txt_allorder.TabIndex = 1;
+            // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label29.Location = new Point(17, 37);
+            label29.Name = "label29";
+            label29.Size = new Size(96, 20);
+            label29.TabIndex = 0;
+            label29.Text = "All of orders";
             // 
             // AdminForm
             // 
@@ -732,6 +1104,7 @@
             Load += AdminForm_Load;
             tabcontrol1.ResumeLayout(false);
             tab_manageaccounts.ResumeLayout(false);
+            tab_manageaccounts.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -739,12 +1112,27 @@
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dtg_user).EndInit();
             tab_manageproducts.ResumeLayout(false);
+            tab_manageproducts.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dtg_product).EndInit();
             gb_productname.ResumeLayout(false);
             gb_productname.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pb_productimage).EndInit();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
+            tabPage3.ResumeLayout(false);
+            tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dtg_category).EndInit();
+            tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dtg_order).EndInit();
+            groupBox4.ResumeLayout(false);
+            groupBox8.ResumeLayout(false);
+            groupBox8.PerformLayout();
+            groupBox7.ResumeLayout(false);
+            groupBox7.PerformLayout();
+            groupBox6.ResumeLayout(false);
+            groupBox6.PerformLayout();
+            groupBox5.ResumeLayout(false);
+            groupBox5.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -785,7 +1173,6 @@
         private GroupBox groupBox3;
         private TextBox txt_searchproduct;
         private Label label11;
-        private Button btn_searchproduct;
         private GroupBox gb_productname;
         private Label label15;
         private Label label14;
@@ -811,5 +1198,37 @@
         private ComboBox cb_categoryproduct;
         private Label label22;
         private Label label16;
+        private Label label17;
+        private Label lb_totaluser;
+        private Label lb_totalproduct;
+        private Label label21;
+        private TextBox txt_categoryname;
+        private TextBox txt_categoryid;
+        private Label label25;
+        private Label label24;
+        private Label label23;
+        private DataGridView dtg_category;
+        private Button btn_savecategory;
+        private Button btn_closecategory;
+        private Label label27;
+        private Label label26;
+        private GroupBox groupBox4;
+        private Label label28;
+        private GroupBox groupBox8;
+        private Label label32;
+        private GroupBox groupBox7;
+        private TextBox txt_ordered;
+        private Label label31;
+        private GroupBox groupBox6;
+        private TextBox txt_ordersuccessful;
+        private Label label30;
+        private GroupBox groupBox5;
+        private TextBox txt_allorder;
+        private Label label29;
+        private TextBox txt_ordercancel;
+        private DataGridView dtg_order;
+        private OxyPlot.WindowsForms.PlotView pvChart;
+        private Button btn_deletecategory;
+        private Button btn_clearcategory;
     }
 }
