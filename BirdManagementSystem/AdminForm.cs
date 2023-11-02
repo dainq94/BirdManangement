@@ -99,6 +99,7 @@ namespace Bird.APP
             txt_ordersuccessful.Text = _orderService.GetOrdersWithStatus(new List<string> { "SUCCESSFUL" }).Count().ToString();
             txt_ordered.Text = _orderService.GetOrdersWithStatus(new List<string> { "ORDERED" }).Count().ToString();
             txt_ordercancel.Text = _orderService.GetOrdersWithStatus(new List<string> { "CANCELLED" }).Count().ToString();
+            lb_totalrecord_category.Text = $"Total records: {dtg_category.RowCount}";
 
             // -------------------- load chart order ---------------------------------
             var model = new PlotModel() { Title = "Thống kê" };
@@ -440,7 +441,8 @@ namespace Bird.APP
                         p.Description,
                         p.Price,
                         p.Category.CategoryName,
-                        p.Status
+                        p.Status,
+                        p.Image
                     }).ToList();
                 }
                 else
@@ -452,6 +454,7 @@ namespace Bird.APP
             {
                 MessageBox.Show(ex.Message);
             }
+
         }
 
         private void btn_closeuser_Click(object sender, EventArgs e)
@@ -475,6 +478,7 @@ namespace Bird.APP
                 product.Quantity = int.Parse(txt_quantity.Text.Trim());
                 product.Description = txt_description.Text.Trim();
                 product.CategoryId = int.Parse(cb_category.SelectedValue.ToString());
+                product.Image = txt_image.Text.Trim();
                 product.Status = status;
 
                 _productService.AddProduct(product);
@@ -487,7 +491,8 @@ namespace Bird.APP
                     p.Description,
                     p.Price,
                     p.Category.CategoryName,
-                    p.Status
+                    p.Status,
+                    p.Image
                 }).ToList();
 
                 cb_category.DataSource = _categoryService.GetCategories();
@@ -546,7 +551,8 @@ namespace Bird.APP
                     p.Description,
                     p.Price,
                     p.Category.CategoryName,
-                    p.Status
+                    p.Status,
+                    p.Image
                 }).ToList();
             }
             catch (Exception ex)
@@ -715,7 +721,7 @@ namespace Bird.APP
         {
             try
             {
-                if(int.Parse(txt_categoryid.Text.Trim()) > 0)
+                if (int.Parse(txt_categoryid.Text.Trim()) > 0)
                 {
                     _categoryService.DeleteCategory(int.Parse(txt_categoryid.Text.Trim()));
                     MessageBox.Show("Delete successful!");
@@ -725,7 +731,8 @@ namespace Bird.APP
                         c.CategoryId,
                         c.CategoryName
                     }).ToList();
-                } else
+                }
+                else
                 {
                     MessageBox.Show("CategoryID isn't empty");
                 }
@@ -734,6 +741,21 @@ namespace Bird.APP
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void lb_totalrecord_order_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_cleardata_Click(object sender, EventArgs e)
+        {
+            txt_id.Clear();
+            txt_productname.Clear();
+            txt_price.Clear();
+            txt_quantity.Clear();
+            txt_image.Clear();
+            txt_description.Clear();
         }
     }
 }

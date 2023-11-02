@@ -68,6 +68,7 @@
             btn_editproduct = new Button();
             dtg_product = new DataGridView();
             gb_productname = new GroupBox();
+            btn_cleardata = new Button();
             label16 = new Label();
             txt_productname = new TextBox();
             label20 = new Label();
@@ -91,6 +92,7 @@
             txt_searchproduct = new TextBox();
             label11 = new Label();
             tabPage3 = new TabPage();
+            lb_totalrecord_category = new Label();
             btn_clearcategory = new Button();
             btn_deletecategory = new Button();
             btn_closecategory = new Button();
@@ -104,6 +106,7 @@
             label23 = new Label();
             dtg_category = new DataGridView();
             tabPage4 = new TabPage();
+            label33 = new Label();
             pvChart = new OxyPlot.WindowsForms.PlotView();
             dtg_order = new DataGridView();
             groupBox4 = new GroupBox();
@@ -501,9 +504,9 @@
             // Btn_closeproduct
             // 
             Btn_closeproduct.BackColor = Color.FromArgb(255, 128, 128);
-            Btn_closeproduct.Location = new Point(1102, 594);
+            Btn_closeproduct.Location = new Point(1102, 612);
             Btn_closeproduct.Name = "Btn_closeproduct";
-            Btn_closeproduct.Size = new Size(124, 51);
+            Btn_closeproduct.Size = new Size(124, 33);
             Btn_closeproduct.TabIndex = 7;
             Btn_closeproduct.Text = "Close";
             Btn_closeproduct.UseVisualStyleBackColor = false;
@@ -512,9 +515,9 @@
             // btn_deleteproduct
             // 
             btn_deleteproduct.BackColor = Color.FromArgb(255, 128, 128);
-            btn_deleteproduct.Location = new Point(1102, 528);
+            btn_deleteproduct.Location = new Point(1101, 556);
             btn_deleteproduct.Name = "btn_deleteproduct";
-            btn_deleteproduct.Size = new Size(124, 51);
+            btn_deleteproduct.Size = new Size(124, 31);
             btn_deleteproduct.TabIndex = 7;
             btn_deleteproduct.Text = "Delete";
             btn_deleteproduct.UseVisualStyleBackColor = false;
@@ -523,9 +526,9 @@
             // btn_addproduct
             // 
             btn_addproduct.BackColor = Color.FromArgb(255, 128, 128);
-            btn_addproduct.Location = new Point(1103, 452);
+            btn_addproduct.Location = new Point(1102, 505);
             btn_addproduct.Name = "btn_addproduct";
-            btn_addproduct.Size = new Size(123, 51);
+            btn_addproduct.Size = new Size(123, 32);
             btn_addproduct.TabIndex = 6;
             btn_addproduct.Text = "Add";
             btn_addproduct.UseVisualStyleBackColor = false;
@@ -534,11 +537,11 @@
             // btn_editproduct
             // 
             btn_editproduct.BackColor = Color.FromArgb(255, 128, 128);
-            btn_editproduct.Location = new Point(1102, 382);
+            btn_editproduct.Location = new Point(1102, 457);
             btn_editproduct.Name = "btn_editproduct";
-            btn_editproduct.Size = new Size(124, 52);
+            btn_editproduct.Size = new Size(124, 32);
             btn_editproduct.TabIndex = 5;
-            btn_editproduct.Text = "Edit";
+            btn_editproduct.Text = "Update";
             btn_editproduct.UseVisualStyleBackColor = false;
             btn_editproduct.Click += btn_editproduct_Click;
             // 
@@ -546,11 +549,11 @@
             // 
             dtg_product.AllowUserToAddRows = false;
             dtg_product.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtg_product.Location = new Point(16, 382);
+            dtg_product.Location = new Point(16, 457);
             dtg_product.Name = "dtg_product";
             dtg_product.RowHeadersWidth = 51;
             dtg_product.RowTemplate.Height = 29;
-            dtg_product.Size = new Size(1080, 263);
+            dtg_product.Size = new Size(1080, 188);
             dtg_product.TabIndex = 4;
             dtg_product.CellClick += dtg_product_CellClick;
             dtg_product.CellContentClick += dtg_product_CellContentClick;
@@ -558,6 +561,7 @@
             // gb_productname
             // 
             gb_productname.BackColor = Color.FromArgb(255, 224, 192);
+            gb_productname.Controls.Add(btn_cleardata);
             gb_productname.Controls.Add(label16);
             gb_productname.Controls.Add(txt_productname);
             gb_productname.Controls.Add(label20);
@@ -577,10 +581,21 @@
             gb_productname.Controls.Add(pb_productimage);
             gb_productname.Location = new Point(344, 47);
             gb_productname.Name = "gb_productname";
-            gb_productname.Size = new Size(888, 329);
+            gb_productname.Size = new Size(888, 404);
             gb_productname.TabIndex = 3;
             gb_productname.TabStop = false;
-            gb_productname.Text = "Thông tin sản phẩm";
+            gb_productname.Text = "Information";
+            // 
+            // btn_cleardata
+            // 
+            btn_cleardata.BackColor = Color.FromArgb(128, 128, 255);
+            btn_cleardata.Location = new Point(726, 21);
+            btn_cleardata.Name = "btn_cleardata";
+            btn_cleardata.Size = new Size(151, 33);
+            btn_cleardata.TabIndex = 20;
+            btn_cleardata.Text = "Clear data to add";
+            btn_cleardata.UseVisualStyleBackColor = false;
+            btn_cleardata.Click += btn_cleardata_Click;
             // 
             // label16
             // 
@@ -663,7 +678,7 @@
             txt_description.Location = new Point(372, 258);
             txt_description.Multiline = true;
             txt_description.Name = "txt_description";
-            txt_description.Size = new Size(505, 65);
+            txt_description.Size = new Size(505, 140);
             txt_description.TabIndex = 0;
             // 
             // txt_quantity
@@ -722,7 +737,7 @@
             // 
             pb_productimage.Location = new Point(18, 28);
             pb_productimage.Name = "pb_productimage";
-            pb_productimage.Size = new Size(316, 227);
+            pb_productimage.Size = new Size(316, 270);
             pb_productimage.SizeMode = PictureBoxSizeMode.StretchImage;
             pb_productimage.TabIndex = 0;
             pb_productimage.TabStop = false;
@@ -757,9 +772,9 @@
             label22.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label22.Location = new Point(10, 131);
             label22.Name = "label22";
-            label22.Size = new Size(145, 20);
+            label22.Size = new Size(73, 20);
             label22.TabIndex = 3;
-            label22.Text = "Theo loại sản phẩm";
+            label22.Text = "Category";
             // 
             // txt_searchproduct
             // 
@@ -775,13 +790,14 @@
             label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label11.Location = new Point(10, 32);
             label11.Name = "label11";
-            label11.Size = new Size(110, 20);
+            label11.Size = new Size(55, 20);
             label11.TabIndex = 0;
-            label11.Text = "Tên sản phẩm:";
+            label11.Text = "Search";
             // 
             // tabPage3
             // 
             tabPage3.BackColor = Color.FromArgb(255, 224, 192);
+            tabPage3.Controls.Add(lb_totalrecord_category);
             tabPage3.Controls.Add(btn_clearcategory);
             tabPage3.Controls.Add(btn_deletecategory);
             tabPage3.Controls.Add(btn_closecategory);
@@ -800,6 +816,17 @@
             tabPage3.Size = new Size(1232, 660);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Manage Categories";
+            // 
+            // lb_totalrecord_category
+            // 
+            lb_totalrecord_category.AutoSize = true;
+            lb_totalrecord_category.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lb_totalrecord_category.Location = new Point(19, 176);
+            lb_totalrecord_category.Name = "lb_totalrecord_category";
+            lb_totalrecord_category.Size = new Size(140, 28);
+            lb_totalrecord_category.TabIndex = 13;
+            lb_totalrecord_category.Text = "Total records:";
+            lb_totalrecord_category.Click += lb_totalrecord_order_Click;
             // 
             // btn_clearcategory
             // 
@@ -835,11 +862,11 @@
             // 
             label27.AutoSize = true;
             label27.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
-            label27.Location = new Point(65, 94);
+            label27.Location = new Point(37, 94);
             label27.Name = "label27";
-            label27.Size = new Size(182, 46);
+            label27.Size = new Size(253, 46);
             label27.TabIndex = 8;
-            label27.Text = "Danh sách";
+            label27.Text = "List Categories";
             // 
             // label26
             // 
@@ -847,9 +874,9 @@
             label26.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
             label26.Location = new Point(593, 94);
             label26.Name = "label26";
-            label26.Size = new Size(329, 46);
+            label26.Size = new Size(310, 46);
             label26.TabIndex = 7;
-            label26.Text = "Thêm category mới";
+            label26.Text = "Add new category";
             // 
             // btn_savecategory
             // 
@@ -909,16 +936,17 @@
             // dtg_category
             // 
             dtg_category.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtg_category.Location = new Point(3, 191);
+            dtg_category.Location = new Point(3, 211);
             dtg_category.Name = "dtg_category";
             dtg_category.RowHeadersWidth = 51;
             dtg_category.RowTemplate.Height = 29;
-            dtg_category.Size = new Size(305, 469);
+            dtg_category.Size = new Size(305, 449);
             dtg_category.TabIndex = 0;
             dtg_category.CellClick += dtg_category_CellClick;
             // 
             // tabPage4
             // 
+            tabPage4.Controls.Add(label33);
             tabPage4.Controls.Add(pvChart);
             tabPage4.Controls.Add(dtg_order);
             tabPage4.Controls.Add(groupBox4);
@@ -930,12 +958,23 @@
             tabPage4.UseVisualStyleBackColor = true;
             tabPage4.Click += tabPage4_Click;
             // 
+            // label33
+            // 
+            label33.BackColor = Color.Blue;
+            label33.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            label33.ForeColor = Color.White;
+            label33.Location = new Point(-4, 0);
+            label33.Name = "label33";
+            label33.Size = new Size(1236, 54);
+            label33.TabIndex = 3;
+            label33.Text = "MANAGE ORDERS";
+            // 
             // pvChart
             // 
-            pvChart.Location = new Point(498, 15);
+            pvChart.Location = new Point(559, 89);
             pvChart.Name = "pvChart";
             pvChart.PanCursor = Cursors.Hand;
-            pvChart.Size = new Size(479, 409);
+            pvChart.Size = new Size(382, 328);
             pvChart.TabIndex = 2;
             pvChart.ZoomHorizontalCursor = Cursors.SizeWE;
             pvChart.ZoomRectangleCursor = Cursors.SizeNWSE;
@@ -1230,5 +1269,8 @@
         private OxyPlot.WindowsForms.PlotView pvChart;
         private Button btn_deletecategory;
         private Button btn_clearcategory;
+        private Label label33;
+        private Label lb_totalrecord_category;
+        private Button btn_cleardata;
     }
 }
