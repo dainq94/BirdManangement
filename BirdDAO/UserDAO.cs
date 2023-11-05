@@ -69,13 +69,13 @@ namespace BirdDAO
             try
             {
                 var dbContent = new BirdContext();
-                if(user != null)
+                if (user != null)
                 {
                     dbContent.Users.Update(user);
                     dbContent.SaveChanges();
-                }               
+                }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
@@ -156,6 +156,35 @@ namespace BirdDAO
                 throw new Exception(ex.Message);
             }
         }
-        
+        public bool CheckPhoneExist(string phone)
+        {
+            User user = null;
+            try
+            {
+                var context = new BirdContext();
+                user = context.Users.SingleOrDefault(item => item.Phone.Equals(phone));
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+            return user != null;
+        }
+
+        public void Save(User entity)
+        {
+            try
+            {
+                if (Instance.Exist(entity.Username) || Instance.Exist(entity.Email))
+                    Instance.Update(entity);
+                else
+                    Instance.Create(entity);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message + entity.Username);
+            }
+        }
     }
 }

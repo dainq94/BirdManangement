@@ -11,6 +11,16 @@ namespace BirdService
             _userRepository = new UserRepository();
         }
 
+        public bool CheckEmail(string usernameOrEmail)
+        {
+            return _userRepository.CheckEmail(usernameOrEmail);
+        }
+
+        public bool CheckPhone(string phone)
+        {
+            return _userRepository.CheckPhone(phone);
+        }
+
         public void Create(User user)
         {
             _userRepository.Create(user);
@@ -24,6 +34,11 @@ namespace BirdService
         public User GetUserByUsername(string user)
         {
             return _userRepository.getUserByEmail(user);
+        }
+
+        public void Save(User user)
+        {
+            _userRepository.Save(user);
         }
 
         public void UpdateUser(User user)

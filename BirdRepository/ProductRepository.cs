@@ -22,5 +22,8 @@ namespace BirdRepository
 
         public List<Product> getProductsByCategoryId(int categoryId)
             => ProductDAO.Instance.getProductsByCategoryId(categoryId);
+
+        public List<Product> SearchProductsByName(string searchValue)
+        => ProductDAO.Instance.SearchProductsByName(searchValue);
     }
 }

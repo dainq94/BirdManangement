@@ -5,6 +5,12 @@ namespace BirdRepository
 {
     public class UserRepository : IUserRepository
     {
+        public bool CheckEmail(string usernameOrEmail)
+        => UserDAO.Instance.Exist(usernameOrEmail);
+
+        public bool CheckPhone(string phone)
+        => UserDAO.Instance.CheckPhoneExist(phone);
+
         public void Create(User user)
         => UserDAO.Instance.Create(user);
 
@@ -14,6 +20,9 @@ namespace BirdRepository
         public User getUserByEmail(string email)
         => UserDAO.Instance.GetUserByUsername(email);
 
+        public void Save(User entity)
+       => UserDAO.Instance.Save(entity);
+
         public void UpdateUser(User user)
         => UserDAO.Instance.UpdateUser(user);
 
@@ -21,5 +30,6 @@ namespace BirdRepository
         {
             throw new NotImplementedException();
         }
+
     }
 }

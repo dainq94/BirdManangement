@@ -295,3 +295,4 @@ F:\GitSource\BirdManangement\BirdManagementSystem\obj\Debug\net6.0-windows\refin
 F:\GitSource\BirdManangement\BirdManagementSystem\obj\Debug\net6.0-windows\Bird.APP.pdb
 F:\GitSource\BirdManangement\BirdManagementSystem\obj\Debug\net6.0-windows\Bird.APP.genruntimeconfig.cache
 F:\GitSource\BirdManangement\BirdManagementSystem\obj\Debug\net6.0-windows\ref\Bird.APP.dll
+F:\GitSource\BirdManangement\BirdManagementSystem\obj\Debug\net6.0-windows\GiftHommieWinforms.CheckoutForm.resources

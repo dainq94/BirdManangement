@@ -40,5 +40,9 @@ namespace BirdService
             return _productrepository.getProductsByCategoryId(categoryId);
         }
 
+        public List<Product> SearchProductsByName(string searchValue)
+        {
+            return _productrepository.SearchProductsByName(searchValue);
+        }
     }
 }

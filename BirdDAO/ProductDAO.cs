@@ -118,5 +118,17 @@ namespace BirdDAO
                 throw new Exception("Delete Error!!!" + ex.Message);
             }
         }
+        public List<Product> SearchProductsByName(string name)
+        {
+            try
+            {
+                var dbContent = new BirdContext();
+                return dbContent.Products.Where(c => c.Name.ToLower().Contains(name)).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
