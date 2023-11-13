@@ -35,6 +35,7 @@ namespace Bird.APP
                 //    throw new Exception("Please enter the password!");
 
                 User user = userService.GetUserByUsername(txtUsername.Text.Trim());
+
                 if (user != null)
                 {
                     //switch(user.Role)
@@ -45,13 +46,18 @@ namespace Bird.APP
                     //        this.Hide();
                     //        break;
                     //    case "Admin":
-                    //        break;
+                    //        break; 
                     //    case "Staff":
                     //        MessageBox.Show("You are not permission.");
                     //        break;
                     //}
 
                     GlobalData.AuthenticatedUser = user;
+                    if (user.Status == false)
+                    {
+                        MessageBox.Show("Your account banned!!!");
+                        return;
+                    }
                     if (user.Role.Equals("User")) // CUSTOMER
                     {
                         CustomerForm customerFrom = new CustomerForm();

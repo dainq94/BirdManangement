@@ -274,8 +274,8 @@ namespace Bird.APP
             {
                 try
                 {
-                    int productId = ((Product)bindingSource.Current).ProductId;
-                    // int productId = (int)dgvProducts.CurrentRow.Cells[0].Value;
+                    //int productId = ((Product)bindingSource.Current).ProductId;
+                    int productId = (int)dgvProducts.CurrentRow.Cells[0].Value;
                     Cart cart = new Cart
                     {
                         Username = GlobalData.AuthenticatedUser.Username,
@@ -331,11 +331,10 @@ namespace Bird.APP
         private void SetCartVisible()
         {
             List<Cart> list = _cartService.GetAllCartItemsByUsername(GlobalData.AuthenticatedUser.Username);
-            List<string> columns = new List<string>
-            {
-                "ID", "Username", "ProductId", "UsernameNavigation", "LastUpdatedTime"
-            };
-
+            //List<string> columns = new List<string>
+            //{
+            //    "ID", "Username", "ProductId", "UsernameNavigation", "LastUpdatedTime"
+            //};
             bindingSource = new BindingSource();
 
             //RELOAD CART FILTER    
@@ -343,15 +342,23 @@ namespace Bird.APP
 
             bindingSource.DataSource = list;
             dgvCarts.DataSource = bindingSource;
+
+            //dgvCarts.Columns["Product"];
+
+            var list1 = _cartService.GetAllCartItemsByUsername(GlobalData.AuthenticatedUser.Username);
+
+
+
+
             //dgvCarts.Columns["ProductName"].
             //productNameColumn.HeaderText = "ProductName";
             //productNameColumn.ValueType = "ProductNam
             //productNameColumn.DataPropertyName = "ProductName";
             //dgvCarts.Columns["Product"].Name =;
-            foreach (string c in columns)
-            {
-                dgvCarts.Columns[c].Visible = false;
-            }
+            //foreach (string c in columns)
+            //{
+            //    dgvCarts.Columns[c].Visible = false;
+            //}
 
             //SET DEFAULT VALUE FOR CHECKBOX
             LoadChoosenItems();
@@ -732,7 +739,8 @@ namespace Bird.APP
             }
             return false;
         }
-        private void btnSave_Click(object sender, EventArgs e)
+
+        private void btnSave_Click_1(object sender, EventArgs e)
         {
             if (ValidateInputs() == true && CheckDupplicated() == true && CheckDupplicatedPhone() == true)
             {
@@ -748,7 +756,7 @@ namespace Bird.APP
                     Yob = int.Parse(txtYob.Text.Trim()),
                     Address = txtAddress.Text,
                     Image = GlobalData.AuthenticatedUser.Image,
-                    //Enabled = GlobalData.AuthenticatedUser.Enabled
+                    Status = GlobalData.AuthenticatedUser.Status
                 };
                 DialogResult d;
                 d = MessageBox.Show($"Save User ", "Profile", MessageBoxButtons.OKCancel, MessageBoxIcon.Question,
@@ -768,14 +776,6 @@ namespace Bird.APP
                 MessageBox.Show("Please Check Value Input Again");
 
             }
-
-
-
-
         }
-
-
-
-
     }
 }
