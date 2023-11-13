@@ -10,5 +10,7 @@ namespace BirdRepository
 
         void AddProduct(Product product);
         void DeleteProduct(int id);
+        List<Product> getProductsByCategoryId(int categoryId);
+        List<Product> SearchProductsByName(string searchValue);
     }
 }

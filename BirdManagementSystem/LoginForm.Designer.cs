@@ -52,7 +52,7 @@
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(232, 27);
             txtUsername.TabIndex = 1;
-            txtUsername.Text = "admin";
+            txtUsername.Text = "akaza";
             txtUsername.TextChanged += textBox1_TextChanged;
             // 
             // txtPassword
@@ -61,7 +61,7 @@
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(232, 27);
             txtPassword.TabIndex = 3;
-            txtPassword.Text = "123456";
+            txtPassword.Text = "111111";
             // 
             // label2
             // 
@@ -114,6 +114,7 @@
             Controls.Add(txtUsername);
             Controls.Add(label1);
             Name = "LoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += LoginForm_Load;
             ResumeLayout(false);

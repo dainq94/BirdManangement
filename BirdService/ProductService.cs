@@ -6,7 +6,8 @@ namespace BirdService
     public class ProductService : IProductService
     {
         private readonly IProductRepository _productrepository;
-        public ProductService() {
+        public ProductService()
+        {
             _productrepository = new ProductRepository();
         }
 
@@ -33,6 +34,15 @@ namespace BirdService
         public void UpdateProduct(Product product)
         {
             _productrepository.UpdateProduct(product);
+        }
+        public List<Product> getProductsByCategoryId(int categoryId)
+        {
+            return _productrepository.getProductsByCategoryId(categoryId);
+        }
+
+        public List<Product> SearchProductsByName(string searchValue)
+        {
+            return _productrepository.SearchProductsByName(searchValue);
         }
     }
 }

@@ -9,5 +9,10 @@ namespace BirdRepository
         bool UserExit(string usernameOrEmailOrPhone);
         void Create(User user);
         void UpdateUser(User user);
+
+        bool CheckEmail(string usernameOrEmail);
+        bool CheckPhone(string phone);
+        void Save(User entity);
+
     }
 }

@@ -40,7 +40,7 @@ namespace BirdDAO
                 var dbContent = new BirdContext();
                 return dbContent.Products.SingleOrDefault(p => p.ProductId.Equals(id));
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
@@ -51,7 +51,7 @@ namespace BirdDAO
             try
             {
                 var dbContent = new BirdContext();
-                if(product != null)
+                if (product != null)
                 {
                     dbContent.Products.Update(product);
                     dbContent.SaveChanges();
@@ -106,73 +106,29 @@ namespace BirdDAO
             }
         }
 
-        //public List<Product> GetAllWithFilterWithoutStatus(string searchId, string searchName, string searchUnitPriceMin, string searchUnitPriceMax, string searchUnitInStockMin, string searchUnitInStockMax, int categoryId)
-        //{
-        //    string id = (searchId != null) ? searchId : "";
-        //    string name = (searchName != null) ? searchName : "";
-        //    double unitPriceMin;
-        //    double unitPriceMax;
-        //    int unitInStockMin;
-        //    int unitInStockMax;
-        //    if (searchUnitPriceMin == null || searchUnitPriceMin == "")
-        //    {
-        //        unitPriceMin = 0;
-        //    }
-        //    else
-        //    {
-        //        unitPriceMin = Convert.ToDouble(searchUnitPriceMin);
-        //    }
-        //    if (searchUnitPriceMax == null || searchUnitPriceMax == "")
-        //    {
-        //        unitPriceMax = double.MaxValue;
-        //    }
-        //    else
-        //    {
-        //        unitPriceMax = Convert.ToDouble(searchUnitPriceMax);
-        //    }
-        //    if (searchUnitInStockMin == null || searchUnitInStockMin == "")
-        //    {
-        //        unitInStockMin = 0;
-        //    }
-        //    else
-        //    {
-        //        unitInStockMin = int.Parse(searchUnitInStockMin);
-        //    }
-        //    if (searchUnitInStockMax == null || searchUnitInStockMax == "")
-        //    {
-        //        unitInStockMax = int.MaxValue;
-        //    }
-        //    else
-        //    {
-        //        unitInStockMax = int.Parse(searchUnitInStockMax);
-        //    }
-
-        //    List<Product> result = null;
-
-        //    try
-        //    {
-        //        using (var context = new BirdContext())
-        //        {
-        //            result = context.Products.Include(item => item.Category)
-        //                    .Where(product => product.Id.ToString().Contains(id)
-        //                    && product.Name.Contains(name)
-        //                    && product.Price >= unitPriceMin
-        //                    && product.Price <= unitPriceMax
-        //                    && product.Quantity >= unitInStockMin
-        //                    && product.Quantity <= unitInStockMax
-        //                    && (categoryId == 0 || product.CategoryId == categoryId)
-
-        //                    )
-        //                    .ToList();
-        //        }
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-
-        //    return result;
-        //}
+        public List<Product> getProductsByCategoryId(int categoryId)
+        {
+            try
+            {
+                var dbContent = new BirdContext();
+                return dbContent.Products.Where(p => p.CategoryId == categoryId).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Delete Error!!!" + ex.Message);
+            }
+        }
+        public List<Product> SearchProductsByName(string name)
+        {
+            try
+            {
+                var dbContent = new BirdContext();
+                return dbContent.Products.Where(c => c.Name.ToLower().Contains(name)).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
