@@ -329,41 +329,23 @@ namespace Bird.APP
         private void SetCartVisible()
         {
             List<Cart> list = _cartService.GetAllCartItemsByUsername(GlobalData.AuthenticatedUser.Username);
-            //List<string> columns = new List<string>
-            //{
-            //    "ID", "Username", "ProductId", "UsernameNavigation", "LastUpdatedTime"
-            //};
+            List<string> columns = new List<string>
+            {
+                "ID", "Username", "UsernameNavigation", "LastUpdatedTime"
+            };
+
             bindingSource = new BindingSource();
 
-            //RELOAD CART FILTER    
+            //RELOAD CART FILTER        
             list = CartFilterTheDataGridView(list);
 
-            bindingSource.DataSource = list.Select(p => new
-            {
-                p.Username,
-                p.ProductId,
-                p.Quantity,
-                p.LastUpDatedTime,
-                p.Product.Name,
-
-            });
+            bindingSource.DataSource = list;
             dgvCarts.DataSource = bindingSource;
 
-            //dgvCarts.Columns["Product"];
-
-
-
-
-
-            //dgvCarts.Columns["ProductName"].
-            //productNameColumn.HeaderText = "ProductName";
-            //productNameColumn.ValueType = "ProductNam
-            //productNameColumn.DataPropertyName = "ProductName";
-            //dgvCarts.Columns["Product"].Name =;
-            //foreach (string c in columns)
-            //{
-            //    dgvCarts.Columns[c].Visible = false;
-            //}
+            foreach (string c in columns)
+            {
+                dgvCarts.Columns[c].Visible = false;
+            }
 
             //SET DEFAULT VALUE FOR CHECKBOX
             LoadChoosenItems();
@@ -399,8 +381,21 @@ namespace Bird.APP
         {
             foreach (DataGridViewRow row in dgvCarts.Rows)
             {
-                int cartId = (int)row.Cells["Id"].Value;
-                row.Cells["Check"].Value = (memory.ContainsKey(cartId)) ? memory[cartId] : false;
+                if (row.Cells.Count > 0)
+                {
+                    int cartId = (int)row.Cells["Id"].Value;
+                    row.Cells["Check"].Value = (memory.ContainsKey(cartId)) ? memory[cartId] : false;
+                }
+            }
+        }
+        private void dgvCarts_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == dgvCarts.Columns["ProductId"].Index && e.RowIndex >= 0)
+            {
+                int productId = Convert.ToInt32(e.Value);
+                var product = _productService.GetProductById(productId);
+                e.Value = product.Name;
+                dgvCarts.Columns["ProductId"].HeaderText = "Product Name";
             }
         }
         private void SetCartCurrentProduct()
@@ -591,6 +586,8 @@ namespace Bird.APP
                 }
             }
         }
+
+
         /// Tab Profile ================================================================================
 
 
@@ -785,5 +782,7 @@ namespace Bird.APP
         {
 
         }
+
+
     }
 }

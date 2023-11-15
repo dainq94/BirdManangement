@@ -24,7 +24,6 @@ namespace BirdDAO
             {
                 using (var context = new BirdContext())
                 {
-                    // var item = context.Carts.Include(c => c.Product).ToList();
                     return context.Carts.Include(c => c.Product).ToList();
                 }
 

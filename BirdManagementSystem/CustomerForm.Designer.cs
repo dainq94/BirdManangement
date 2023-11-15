@@ -441,6 +441,7 @@
             dgvCarts.TabIndex = 1;
             dgvCarts.CellClick += dgvCarts_CellClick;
             dgvCarts.CellContentClick += dgvCarts_CellContentClick;
+            dgvCarts.CellFormatting += dgvCarts_CellFormatting;
             // 
             // Check
             // 

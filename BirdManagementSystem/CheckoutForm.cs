@@ -30,7 +30,16 @@ namespace GiftHommieWinforms
             else
                 btnCheckout.Enabled = true;
         }
-
+        private void dgvCheckout_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == dgvCheckout.Columns["ProductId"].Index && e.RowIndex >= 0)
+            {
+                int productId = Convert.ToInt32(e.Value);
+                var product = _productService.GetProductById(productId);
+                e.Value = product.Name;
+                dgvCheckout.Columns["ProductId"].HeaderText = "Product Name";
+            }
+        }
         private Order GetCurrentOrder()
         {
             return new Order
@@ -114,7 +123,7 @@ namespace GiftHommieWinforms
 
             List<string> columns = new List<string>
             {
-                "ID", "OrderId", "ProductId", "Order"
+                "ID", "OrderId", "Product", "Order"
             };
             List<OrderDetail> details = GetCurrentOrderDetail();
 
@@ -222,5 +231,7 @@ namespace GiftHommieWinforms
         {
 
         }
+
+
     }
 }
