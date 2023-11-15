@@ -98,10 +98,7 @@ namespace Bird.APP
         {
             txtProductNameSearch.Text = string.Empty;
 
-            txtUnitPriceMinSearch.Text = string.Empty;
-            txtUnitPriceMaxSearch.Text = string.Empty;
-            txtUnitsInStockMinSearch.Text = string.Empty;
-            txtUnitsInStockMaxSearch.Text = string.Empty;
+
             cbProductCategory2.SelectedValue = 0;
             LoadGridView();
 
@@ -143,6 +140,12 @@ namespace Bird.APP
             {
                 int categoryId = category.CategoryId;
                 dgvProducts.DataSource = _productService.getProductsByCategoryId(categoryId);
+                dgvProducts.Columns["Description"].Visible = false;
+                dgvProducts.Columns["CategoryID"].Visible = false;
+                dgvProducts.Columns["Image"].Visible = false;
+                dgvProducts.Columns["Category"].Visible = false;
+                dgvProducts.Columns["Carts"].Visible = false;
+                dgvProducts.Columns["OrderDetails"].Visible = false;
             }
         }
         //Search product 
@@ -167,16 +170,7 @@ namespace Bird.APP
             }
             else
             {
-                dgvProducts.DataSource = _productService.GetAllProducts().Select(p => new
-                {
-                    p.ProductId,
-                    p.Name,
-                    p.Quantity,
-                    p.Description,
-                    p.Price,
-                    p.Category.CategoryName,
-                    p.Status
-                }).ToList();
+                LoadGridView();
             }
         }
 
@@ -309,8 +303,12 @@ namespace Bird.APP
             try
             {
                 //int productId = (int)(bindingSource.Current as Cart).ProductId;
-                int productId = (int)((Cart)bindingSource.Current).ProductId;
-                txtCartAvailable.Text = _orderService.GetAvailableProductQuantity(productId).ToString();
+                var bindingsrc = ((Cart)bindingSource.Current);
+                if (bindingsrc != null)
+                {
+                    int productId = (int)((Cart)bindingSource.Current).ProductId;
+                    txtCartAvailable.Text = _orderService.GetAvailableProductQuantity(productId).ToString();
+                }
             }
             catch (Exception ex)
             {
@@ -340,12 +338,19 @@ namespace Bird.APP
             //RELOAD CART FILTER    
             list = CartFilterTheDataGridView(list);
 
-            bindingSource.DataSource = list;
+            bindingSource.DataSource = list.Select(p => new
+            {
+                p.Username,
+                p.ProductId,
+                p.Quantity,
+                p.LastUpDatedTime,
+                p.Product.Name,
+
+            });
             dgvCarts.DataSource = bindingSource;
 
             //dgvCarts.Columns["Product"];
 
-            var list1 = _cartService.GetAllCartItemsByUsername(GlobalData.AuthenticatedUser.Username);
 
 
 
@@ -364,7 +369,6 @@ namespace Bird.APP
             LoadChoosenItems();
             SetCartCurrentProduct();
             LoadCartTotal();
-            //LoadCartIndexPage();
         }
         private List<Cart> CartFilterTheDataGridView(List<Cart> list)
         {
@@ -443,7 +447,6 @@ namespace Bird.APP
             try
             {
                 int productId = (int)((Cart)bindingSource.Current).ProductId;
-                //lblCartIndex.Text = (bindingSource.Position + 1).ToString();
             }
             catch
             {
@@ -776,6 +779,11 @@ namespace Bird.APP
                 MessageBox.Show("Please Check Value Input Again");
 
             }
+        }
+
+        private void cbProductSort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

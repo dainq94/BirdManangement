@@ -46,16 +46,6 @@
             lbProductName = new Label();
             pbProductAvatar = new PictureBox();
             groupBoxSearch = new GroupBox();
-            groupBox2 = new GroupBox();
-            txtUnitsInStockMaxSearch = new TextBox();
-            label7 = new Label();
-            label8 = new Label();
-            txtUnitsInStockMinSearch = new TextBox();
-            groupBox1 = new GroupBox();
-            label9 = new Label();
-            txtUnitPriceMaxSearch = new TextBox();
-            txtUnitPriceMinSearch = new TextBox();
-            label10 = new Label();
             btnAddToCart = new Button();
             label6 = new Label();
             label5 = new Label();
@@ -127,8 +117,6 @@
             groupBoxProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbProductAvatar).BeginInit();
             groupBoxSearch.SuspendLayout();
-            groupBox2.SuspendLayout();
-            groupBox1.SuspendLayout();
             tabPage2.SuspendLayout();
             groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCarts).BeginInit();
@@ -314,8 +302,6 @@
             // 
             // groupBoxSearch
             // 
-            groupBoxSearch.Controls.Add(groupBox2);
-            groupBoxSearch.Controls.Add(groupBox1);
             groupBoxSearch.Controls.Add(btnAddToCart);
             groupBoxSearch.Controls.Add(label6);
             groupBoxSearch.Controls.Add(label5);
@@ -330,100 +316,6 @@
             groupBoxSearch.Size = new Size(320, 651);
             groupBoxSearch.TabIndex = 0;
             groupBoxSearch.TabStop = false;
-            // 
-            // groupBox2
-            // 
-            groupBox2.Controls.Add(txtUnitsInStockMaxSearch);
-            groupBox2.Controls.Add(label7);
-            groupBox2.Controls.Add(label8);
-            groupBox2.Controls.Add(txtUnitsInStockMinSearch);
-            groupBox2.Location = new Point(6, 470);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(311, 125);
-            groupBox2.TabIndex = 9;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Units In Stock";
-            // 
-            // txtUnitsInStockMaxSearch
-            // 
-            txtUnitsInStockMaxSearch.Location = new Point(152, 84);
-            txtUnitsInStockMaxSearch.Name = "txtUnitsInStockMaxSearch";
-            txtUnitsInStockMaxSearch.Size = new Size(138, 27);
-            txtUnitsInStockMaxSearch.TabIndex = 1;
-            txtUnitsInStockMaxSearch.TextAlign = HorizontalAlignment.Center;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(16, 87);
-            label7.Name = "label7";
-            label7.Size = new Size(130, 20);
-            label7.TabIndex = 2;
-            label7.Text = "Units In Stock Max";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(16, 45);
-            label8.Name = "label8";
-            label8.Size = new Size(127, 20);
-            label8.TabIndex = 0;
-            label8.Text = "Units In Stock Min";
-            // 
-            // txtUnitsInStockMinSearch
-            // 
-            txtUnitsInStockMinSearch.Location = new Point(152, 45);
-            txtUnitsInStockMinSearch.Name = "txtUnitsInStockMinSearch";
-            txtUnitsInStockMinSearch.Size = new Size(138, 27);
-            txtUnitsInStockMinSearch.TabIndex = 0;
-            txtUnitsInStockMinSearch.TextAlign = HorizontalAlignment.Center;
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(label9);
-            groupBox1.Controls.Add(txtUnitPriceMaxSearch);
-            groupBox1.Controls.Add(txtUnitPriceMinSearch);
-            groupBox1.Controls.Add(label10);
-            groupBox1.Location = new Point(6, 317);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(311, 125);
-            groupBox1.TabIndex = 8;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Unit Price";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(16, 45);
-            label9.Name = "label9";
-            label9.Size = new Size(101, 20);
-            label9.TabIndex = 0;
-            label9.Text = "Unit Price Min";
-            // 
-            // txtUnitPriceMaxSearch
-            // 
-            txtUnitPriceMaxSearch.Location = new Point(152, 87);
-            txtUnitPriceMaxSearch.Name = "txtUnitPriceMaxSearch";
-            txtUnitPriceMaxSearch.Size = new Size(138, 27);
-            txtUnitPriceMaxSearch.TabIndex = 1;
-            txtUnitPriceMaxSearch.TextAlign = HorizontalAlignment.Center;
-            // 
-            // txtUnitPriceMinSearch
-            // 
-            txtUnitPriceMinSearch.Location = new Point(152, 45);
-            txtUnitPriceMinSearch.Name = "txtUnitPriceMinSearch";
-            txtUnitPriceMinSearch.Size = new Size(138, 27);
-            txtUnitPriceMinSearch.TabIndex = 0;
-            txtUnitPriceMinSearch.TextAlign = HorizontalAlignment.Center;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(16, 87);
-            label10.Name = "label10";
-            label10.Size = new Size(104, 20);
-            label10.TabIndex = 2;
-            label10.Text = "Unit Price Max";
             // 
             // btnAddToCart
             // 
@@ -460,6 +352,7 @@
             cbProductSort.Name = "cbProductSort";
             cbProductSort.Size = new Size(250, 28);
             cbProductSort.TabIndex = 5;
+            cbProductSort.SelectedIndexChanged += cbProductSort_SelectedIndexChanged;
             // 
             // cbProductCategory2
             // 
@@ -1123,10 +1016,6 @@
             ((System.ComponentModel.ISupportInitialize)pbProductAvatar).EndInit();
             groupBoxSearch.ResumeLayout(false);
             groupBoxSearch.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
             tabPage2.ResumeLayout(false);
             groupBox7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvCarts).EndInit();
@@ -1173,16 +1062,6 @@
         private Label label6;
         private Label label5;
         private DataGridView dgvProducts;
-        private GroupBox groupBox2;
-        private TextBox txtUnitsInStockMaxSearch;
-        private Label label7;
-        private Label label8;
-        private TextBox txtUnitsInStockMinSearch;
-        private GroupBox groupBox1;
-        private Label label9;
-        private TextBox txtUnitPriceMaxSearch;
-        private TextBox txtUnitPriceMinSearch;
-        private Label label10;
         private GroupBox groupBox5;
         private GroupBox groupBox6;
         private Button btnCartDelete;
